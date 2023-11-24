@@ -1,0 +1,31 @@
+@import '../../globals.scss';
+@import 'poly-fluid-sizing';
+@import '../../sass/utils/breakpoints.scss';
+
+.hero {
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-Size: 100%;
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+
+    @include breakpoint('large') {
+        position: absolute;
+        height: 80vh;
+
+    }
+
+    h1 {
+        @include poly-fluid-sizing('font-size', (320px:16px, 768px:26px, 1024px:32px, 1440px:56px));
+    }
+}
