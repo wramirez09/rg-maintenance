@@ -84,7 +84,7 @@ export default function DrawerAppBar(props: Props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-              <Link href="/" className='appBar__brand'>One Stop Shop</Link>
+              <Link href="/" className='appBar__brand'>One Stop</Link>
             </Typography>
 
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
