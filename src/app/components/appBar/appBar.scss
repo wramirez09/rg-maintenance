@@ -1,9 +1,24 @@
+@import '../../globals.scss';
 
+.appBar {
+    background-color: rgba(0, 0, 0, .635);
 
-a{
-    &:hover{
-        color: #CC240B;
-        text-decoration: underline;
+    a {
+        text-decoration: none;
         transition: all .333s ease;
+    }
+
+    a:not(.appBar__brand) {
+        &:hover {
+            color: $light;
+        }
+    }
+
+    &__brand {
+        color: $light;
+
+        &:hover {
+            color: $dark;
+        }
     }
 }

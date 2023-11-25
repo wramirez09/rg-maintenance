@@ -1,0 +1,14 @@
+@import './colors.scss';
+
+h1,
+%h1 {
+    @include poly-fluid-sizing('font-size', (320px:19px, 768px:38px, 1024px:32px, 1440px:75px));
+
+}
+
+
+p,
+%p {
+
+    @include poly-fluid-sizing('font-size', (320px:12px, 768px:14px, 1024px:18px, 1440px:20px));
+}

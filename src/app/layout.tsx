@@ -1,14 +1,13 @@
 'use client'
-import './globals.scss'
-import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@emotion/react';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { createTheme } from '@mui/material';
+import { Inter, Oswald } from 'next/font/google';
 import ResponsiveAppBar from './components/appBar/AppBar';
-import { PaletteColorOptions, createTheme } from '@mui/material';
-import { ThemeProvider } from '@emotion/react';
-import { Oswald } from 'next/font/google';
+import './globals.scss';
 
 const oswald = Oswald({
   weight: ['200', '300', '400', '500', '600', '700',],
@@ -21,9 +20,9 @@ const inter = Inter({ subsets: ['latin'] })
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#CC240B",
-      light: "#FA2C0C",
-      dark: "#801706",
+      main: "#CC0A26",
+      light: "#FA0C30",
+      dark: "#570411",
       contrastText: "#fff",
     },
     secondary: {
@@ -40,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <ThemeProvider theme={theme}>
-      <html lang="en" >
+      <html lang="en" className={oswald.className}>
         <body className={inter.className}>
           <ResponsiveAppBar />
           {children}

@@ -1,3 +1,8 @@
+@import './sass/utils/breakpoints.scss';
+@import 'poly-fluid-sizing';
+@import './sass/colors.scss';
+@import './sass/typography.scss';
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -84,7 +89,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: underline;
+
 }
 
 @media (prefers-color-scheme: dark) {

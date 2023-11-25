@@ -1,6 +1,6 @@
 
 
-import { Container, Button, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { StaticImageData } from 'next/image';
 
@@ -12,13 +12,12 @@ export const Hero: React.FC<{ backgroundImage: StaticImageData }> = ({ backgroun
     <Box style={{ backgroundImage: `url(${backgroundImage.src})` }} className="hero">
       <Container fixed>
         <Typography variant="h1">One Stop Shop </Typography>
-        <Typography variant="h4">Your trusted property maintenance and building construction partner</Typography>
+        <p>Your trusted property maintenance and <br />building construction partner</p>
         <div className='hero__container'>
-          <Button variant='contained' >Get Quote Now</Button>
-          <Button variant="contained" color="secondary">Learn More</Button>
+          <Button variant='contained' size="small" >Get Quote Now</Button>
+          <Button variant="contained" size="small" color="secondary">Learn More</Button>
         </div>
       </Container>
-
     </Box >
   )
 }

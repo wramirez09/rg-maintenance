@@ -1,22 +1,16 @@
 'use client'
-import * as React from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Container, Divider, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-// import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Container, useTheme } from '@mui/material';
 import Link from 'next/link';
+import * as React from 'react';
 
-import './appBar.scss'
+import './appBar.scss';
 
 interface Props {
   /**
@@ -26,7 +20,7 @@ interface Props {
   window?: () => Window;
 }
 
-const drawerWidth = 240;
+// const drawerWidth = 240;
 const navLinks = [{
   title: "Home",
   link: "/"
@@ -40,15 +34,18 @@ const navLinks = [{
 
 export default function DrawerAppBar(props: Props) {
 
+  // const theme = useTheme();
+  const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const theme = useTheme();
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+  const drawerWidth = 240;
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} >
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2 }} >
         <Link href="/">One Stop Shop</Link>
       </Typography>
       <Divider />
@@ -63,17 +60,17 @@ export default function DrawerAppBar(props: Props) {
       </List>
     </Box>
   );
-
+  const container = window !== undefined ? () => window().document.body : undefined;
   return (
 
     <Box sx={{ display: 'flex' }}>
 
       <CssBaseline />
-      <AppBar component="nav" style={{ backgroundColor: "rgba(0, 0, 0, .235)" }}>
+      <AppBar component="nav" className='appBar'>
         <Container fixed>
           <Toolbar>
             <IconButton
-              // color="inherit"
+              color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
@@ -85,10 +82,9 @@ export default function DrawerAppBar(props: Props) {
             <Typography
               variant="h6"
               component="div"
-              // style={{color: theme.palette.primary.main }}
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
-              <Link href="/" style={{ textDecoration: 'none' }}>One Stop Shop</Link>
+              <Link href="/" className='appBar__brand'>One Stop Shop</Link>
             </Typography>
 
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -101,8 +97,25 @@ export default function DrawerAppBar(props: Props) {
           </Toolbar>
         </Container>
       </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
 
-    </Box>
+    </Box >
 
   );
 }
