@@ -1,7 +1,5 @@
 
-type Props = {}
-
-const page = (props: Props) => {
+const page = () => {
   return (
     <div>About</div>
   )
