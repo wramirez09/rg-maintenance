@@ -1,4 +1,10 @@
-// `app/page.tsx` is the UI for the `/` URL
-export default function Page() {
-    return <h1>Hello, About page!</h1>
-  }
+
+type Props = {}
+
+const page = (props: Props) => {
+  return (
+    <div>About</div>
+  )
+}
+
+export default page

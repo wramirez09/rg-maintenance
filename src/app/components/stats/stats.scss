@@ -1,4 +1,4 @@
-@import '../../sass/colors.scss';
+@import '../../globals.scss';
 
 .stats {
     width: 100%;
@@ -8,7 +8,7 @@
     &__inner-wrapper {
         max-width: 1049px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: space-around;
         background-color: $contrastText;
@@ -18,6 +18,9 @@
         left: 0;
         right: 0;
 
+        @include breakpoint('tablet') {
+            flex-direction: row;
+        }
     }
 
     &__feature {
@@ -26,6 +29,11 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        margin: 0 0 3rem 0;
+
+        @include breakpoint('tablet') {
+            margin: 0;
+        }
 
         p {
             line-height: 1;
@@ -45,6 +53,7 @@
 
         &-copy {
             color: var(--second-text-color, #737373);
+            text-transform: uppercase;
             /* h6 */
             font-size: 14px;
             font-style: normal;

@@ -22,6 +22,8 @@
         color: $light;
         font-weight: bold;
         text-align: center;
+        line-height: 1;
+        margin-bottom: .75rem;
 
         span {
             color: $contrastText;
@@ -34,15 +36,19 @@
 
     &__btn-container {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 1rem;
-        margin: 1.5rem 0 1rem;
+        gap: 1.5rem;
 
-        @include breakpoint('mobile') {
+        @include breakpoint('desktop') {
+            display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: center;
+
+            gap: 1rem;
+            margin: 1.5rem 0 1rem;
         }
     }
 

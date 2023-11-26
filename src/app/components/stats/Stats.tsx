@@ -1,27 +1,31 @@
 import { Container, Grid } from '@mui/material';
 import React from 'react';
-import icon from '../../../../public/assets/img/clarity_users-line.svg';
 import './stats.scss';
 
-const FeatureBox: React.FC<{ imgSrc: string, stat: string, text: string }> = ({ imgSrc = "", stat = "200", text = "lorem" }) => {
+export type Feature = {
+    imgSrc: string;
+    stat: string;
+    text: string;
+}
 
-    return <div className='stats__feature'>
+const FeatureBox: React.FC<Feature> = ({ imgSrc = "", stat = "200", text = "lorem" }) => {
+
+    return <Grid className='stats__feature' >
         <img src={imgSrc} />
         <div className='stats__feature-copybox'>
             <h3 className='stats__feature-stat'>{stat}</h3>
             <p className='stats__feature-copy'>{text}</p>
         </div>
-    </div>
+    </Grid>
 }
 
-export const StatsBox: React.FC<unknown> = () => {
+export const StatsBox: React.FC<{ features: Feature[] }> = ({ features }) => {
     return (
         <Grid className='stats__wrapper'>
             <Container className='stats__inner-wrapper'>
-                <FeatureBox imgSrc={icon.src} stat='300' text='lorem ipsum' />
-                <FeatureBox imgSrc={icon.src} stat='300' text='lorem ipsum' />
-                <FeatureBox imgSrc={icon.src} stat='300' text='lorem ipsum' />
-                <FeatureBox imgSrc={icon.src} stat='300' text='lorem ipsum' />
+                {features.length && features.map((feature) => {
+                    return <FeatureBox imgSrc={feature.imgSrc} stat={feature.stat} text={feature.text} />
+                })}
             </Container>
         </Grid>
     )
