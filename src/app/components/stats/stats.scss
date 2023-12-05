@@ -16,17 +16,28 @@
         justify-content: center;
         background-color: $contrastText;
         padding: 2rem 1rem;
-        position: absolute;
-        top: 82vh;
-        left: 0;
-        right: 0;
-        max-width: 1049px;
+        position: relative;
+
         gap: 1.5rem;
 
         @include breakpoint('tablet') {
+            position: absolute;
+            top: 82vh;
+            left: 0;
+            right: 0;
             flex-direction: row;
             gap: 0;
+            max-width: 1049px;
         }
+    }
+
+    &__featureBox {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    &__icon {
+        padding-top: 0;
     }
 
     &__feature {

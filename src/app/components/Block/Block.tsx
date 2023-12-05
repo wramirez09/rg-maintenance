@@ -3,6 +3,7 @@ import people from '../../../../public/assets/img/clarity_users-line.svg';
 import locationsIcon from '../../../../public/assets/img/locations.svg';
 import propsIcon from '../../../../public/assets/img/props.svg';
 import { Feature, StatsBox } from "../stats/Stats";
+import './block.scss';
 export interface IBlockProps {
 
 }
@@ -30,8 +31,11 @@ const features: Feature[] = [
 ]
 export function Block() {
     return (
-        <div style={{ width: '100%', height: '5rem', backgroundColor: 'red', }}>
+        <>
+            <div className='block'>
+            </div>
             <StatsBox features={features} />
-        </div>
+        </>
+
     );
 }

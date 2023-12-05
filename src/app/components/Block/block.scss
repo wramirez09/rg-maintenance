@@ -1,0 +1,8 @@
+@import '../../globals.scss';
+
+.block {
+    width: 100%;
+    // height: 7rem;
+    @include poly-fluid-sizing('height', (320px:30px, 768px:65px, 1024px:112px, 1440px:112px));
+    background-color: $main;
+}
