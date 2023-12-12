@@ -12,13 +12,7 @@ import * as React from 'react';
 
 import './appBar.scss';
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
+
 
 // const drawerWidth = 240;
 const navLinks = [{
@@ -32,10 +26,10 @@ const navLinks = [{
   link: "/contact"
 }];
 
-export default function DrawerAppBar(props: Props) {
+export default function DrawerAppBar() {
 
   // const theme = useTheme();
-  const { window } = props;
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -60,15 +54,15 @@ export default function DrawerAppBar(props: Props) {
       </List>
     </Box>
   );
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = undefined;
   return (
 
     <Box sx={{ display: 'flex' }}>
 
       <CssBaseline />
       <AppBar component="nav" className='appBar'>
-        <Container fixed>
-          <Toolbar>
+        <Container>
+          <Toolbar disableGutters>
             <IconButton
               color="inherit"
               aria-label="open drawer"

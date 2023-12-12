@@ -33,8 +33,9 @@ export function Block() {
     return (
         <>
             <div className='block'>
+
+                <StatsBox features={features} />
             </div>
-            <StatsBox features={features} />
         </>
 
     );

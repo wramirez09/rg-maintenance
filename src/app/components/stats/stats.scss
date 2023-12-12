@@ -5,35 +5,45 @@
     min-height: 5rem;
     background-color: transparent;
 
-    &__wrapper {
-        justify-content: space-evenly;
-    }
-
     &__inner-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         background-color: $contrastText;
-        padding: 2rem 1rem;
-        position: relative;
-
+        padding: 2rem 24px;
+        position: absolute;
+        top: -3.33rem;
+        left: 0;
+        right: 0;
         gap: 1.5rem;
 
         @include breakpoint('tablet') {
-            position: absolute;
-            top: 82vh;
-            left: 0;
-            right: 0;
+
             flex-direction: row;
             gap: 0;
-            max-width: 1049px;
+            max-width: 1024px;
         }
     }
 
     &__featureBox {
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         margin-top: 0;
         padding-top: 0;
+        gap: 0;
+        text-align: center;
+        margin: 0;
+
+        @include breakpoint('tablet') {
+            flex-direction: row;
+            text-align: left;
+            align-items: center;
+            gap: $spacing-m;
+        }
+
     }
 
     &__icon {

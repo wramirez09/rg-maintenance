@@ -10,9 +10,9 @@ export type Feature = {
 
 const FeatureBox: React.FC<Feature> = ({ imgSrc = "", stat = "200", text = "lorem" }) => {
 
-    return <Grid container alignItems='center' justifyContent="center" xs={12} sm={6} md={4} sx={{ gap: '1.25rem' }} rowSpacing={5} className='stats__featureBox'>
-        <Grid xs={2} className='stats__icon'><img src={imgSrc} /></Grid>
-        <Grid className='stats__feature-copybox' xs={7}>
+    return <Grid alignItems='center' justifyContent="center" sx={{ gap: '1.25rem' }} className='stats__featureBox'>
+        <Grid item className='stats__icon'><img src={imgSrc} /></Grid>
+        <Grid item className='stats__feature-copybox' xs={7}>
             <h3 className='stats__feature-stat'>{stat}</h3>
             <p className='stats__feature-copy'>{text}</p>
         </Grid>

@@ -2,10 +2,13 @@
 
 h1,
 %h1 {
-    @include poly-fluid-sizing('font-size', (320px:19px, 768px:38px, 1024px:32px, 1440px:75px));
+    @include poly-fluid-sizing('font-size', (320px:23px, 768px:38px, 1024px:32px, 1440px:75px));
 
 }
 
+h2 {
+    @include poly-fluid-sizing('font-size', (320px:23px, 768px:38px, 1024px:32px, 1440px:55px));
+}
 
 p,
 %p {

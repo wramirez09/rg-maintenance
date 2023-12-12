@@ -18,7 +18,7 @@
 
 
     h1 {
-        @include poly-fluid-sizing('font-size', (320px:19px, 768px:38px, 1024px:32px, 1440px:55px));
+        @include poly-fluid-sizing('font-size', (320px:30px, 768px:38px, 1024px:32px, 1440px:55px));
         color: $main;
         font-weight: bold;
         text-align: center;
