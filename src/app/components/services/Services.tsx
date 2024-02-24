@@ -1,6 +1,6 @@
 'use client'
 import 'react-alice-carousel/lib/alice-carousel.css';
-import Carousel from "./Carousel";
+import Carousel from "../Carousel/Carousel";
 import './services.scss';
 
 //     [{

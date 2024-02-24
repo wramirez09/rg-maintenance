@@ -1,5 +1,5 @@
 
-import { Grid } from '@mui/material'
+
 import bgImage from './../../public/assets/img/henry-bg.jpeg'
 import { Block } from './components/Block/Block'
 import { Hero } from './components/hero/Hero'
@@ -14,12 +14,7 @@ export default function Home() {
       <Hero backgroundImage={bgImage} />
       <Block />
       <Services />
-      <Grid container>
-        <div>
-          <h1>next part</h1>
-        </div>
-      </Grid>
-
+     
     </main>
   )
 }
