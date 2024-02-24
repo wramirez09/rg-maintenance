@@ -1,11 +1,9 @@
-import { HorizontalRule } from '@mui/icons-material';
-import { Box, Container, Grid, Paper, Typography } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
+'use client';
+import { Avatar, Box, Container, Grid, Paper, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import SwipeableViews from 'react-swipeable-views';
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 type Service = { title: string; label: string; imgPath: string };
 
 const services: Service[] = [
@@ -178,9 +176,8 @@ function Carousel() {
 							<>
 								<Button
 									className="anchor"
-									variant={index === activeStep ? 'contained' : 'text'}
+									variant={index === activeStep ? 'text' : 'text'}
 									focusRipple
-									color="primary"
 									onClick={() => setActiveStep(index)}
 								>
 									{step.title}
