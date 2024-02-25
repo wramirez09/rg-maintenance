@@ -71,7 +71,7 @@ const Feature: React.FC<{
 	btnLink?: string;
 	handleNextSlide: () => void;
 	previousSlide: () => void;
-}> = ({ title, label, handleNextSlide, previousSlide }) => {
+}> = ({ title, handleNextSlide, previousSlide }) => {
 	return (
 		<Grid
 			className="services-feature"
