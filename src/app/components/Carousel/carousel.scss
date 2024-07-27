@@ -1,5 +1,27 @@
 @import '../../globals.scss';
 
-button {
-    border-radius: 30px;
+.services__list {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 0.5rem;
+	button {
+		width: fit-content;
+		border-radius: 30px;
+		color: #000;
+		font-size: 0.75rem;
+	}
+}
+
+h3 {
+	@include poly-fluid-sizing(
+		'font-size',
+		(
+			320px: 25px,
+			768px: 25px,
+			1024px: 32px,
+			1440px: 45px,
+		)
+	);
 }

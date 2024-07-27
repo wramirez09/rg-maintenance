@@ -1,62 +1,62 @@
 @import '../../globals.scss';
 
 .services {
-    background-color: $black;
-    width: 100%;
-    height: 500px;
-    margin-bottom: 30px;
+	background-color: $black;
+	width: 100%;
+	height: 500px;
+	margin-bottom: 30px;
 
-    h1 {
-        padding: $spacing-l;
-        background-color: $black;
-    }
+	h1 {
+		padding: $spacing-l;
+		background-color: $black;
+	}
 }
 
 .services-feature {
-    height: 100%;
-    min-height: 250px;
-    background-color: $contrastText;
-    padding: 35px 40px;
-    gap: $spacing-l;
+	height: 100%;
+	min-height: 250px;
+	background-color: $contrastText;
+	padding: 35px 40px;
+	// gap: $spacing-l;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: flex-start;
+	// justify-content: flex-start;
 
-    .react-swipeable-view-container {
-        @include breakpoint('tablet') {
-            gap: 2.5rem;
-        }
-    }
+	.react-swipeable-view-container {
+		@include breakpoint('tablet') {
+			gap: 2.5rem;
+		}
+	}
 
-    h4 {
-        color: var(--text-color, #252B42);
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 24px;
-        /* 150% */
-        letter-spacing: 0.1px;
-        margin-bottom: $spacing-m;
-    }
+	h4 {
+		color: var(--text-color, #252b42);
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 24px;
+		/* 150% */
+		letter-spacing: 0.1px;
+		margin-bottom: $spacing-m;
+	}
 
-    h5 {
-        color: var(--second-text-color, #737373);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 20px;
-        /* 142.857% */
-        letter-spacing: 0.2px;
-        margin-bottom: $spacing-m;
-    }
+	h5 {
+		color: var(--second-text-color, #737373);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 20px;
+		/* 142.857% */
+		letter-spacing: 0.2px;
+		margin-bottom: $spacing-m;
+	}
 }
 
 .anchor {
-    &:hover {
-        color: $main;
-        cursor: pointer;
-        transition: all .333s ease-in-out;
-    }
+	&:hover {
+		color: $main;
+		cursor: pointer;
+		transition: all 0.333s ease-in-out;
+	}
 }

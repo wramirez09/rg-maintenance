@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import SwipeableViews from 'react-swipeable-views';
+import './carousel.scss';
+
 type Service = { title: string; label: string; imgPath: string };
 
 const services: Service[] = [
@@ -129,7 +131,7 @@ const Feature: React.FC<{
 	);
 };
 
-function Carousel() {
+const Carousel = () => {
 	const theme = useTheme();
 	const [activeStep, setActiveStep] = React.useState(0);
 	// const maxSteps = services.length / 3;
@@ -144,6 +146,7 @@ function Carousel() {
 	};
 
 	const handleBack = () => {
+		console.log('step', activeStep, services.length);
 		setActiveStep((prevActiveStep) => {
 			if (prevActiveStep <= 0) return services.length - 1;
 			return prevActiveStep - 1;
@@ -158,11 +161,11 @@ function Carousel() {
 		<Container>
 			<Grid item>
 				<Grid item sx={{ mt: 3 }}>
-					<h2>Services</h2>
+					<h3>Services</h3>
 				</Grid>
-				<Box sx={{ maxWidth: 400 }}>
+				<Box>
 					{activeStep === services.length && (
-						<Paper square elevation={0} sx={{ p: 3 }}>
+						<Paper square elevation={1} sx={{ p: 3 }}>
 							<Typography>All steps completed - you&apos;re finished</Typography>
 							<Button onClick={() => setActiveStep(0)} sx={{ mt: 1, mr: 1 }}>
 								Reset
@@ -170,19 +173,18 @@ function Carousel() {
 						</Paper>
 					)}
 				</Box>
-				<Box sx={{ my: 2 }}>
+				<Box sx={{ my: 2 }} className="services__list">
 					{services.map((step, index) => {
 						return (
-							<>
-								<Button
-									className="anchor"
-									variant={index === activeStep ? 'text' : 'text'}
-									focusRipple
-									onClick={() => setActiveStep(index)}
-								>
-									{step.title}
-								</Button>
-							</>
+							<Button
+								key={`${index}-${step}`}
+								className="anchor"
+								variant={index === activeStep ? 'outlined' : 'text'}
+								focusRipple
+								onClick={() => setActiveStep(index)}
+							>
+								{step.title}
+							</Button>
 						);
 					})}
 				</Box>
@@ -211,6 +213,6 @@ function Carousel() {
 			</Grid>
 		</Container>
 	);
-}
+};
 
 export default Carousel;
